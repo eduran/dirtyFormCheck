@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Problem 1: Dirty Forms</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/confirmDirtyForm.js"></script>
+    <style type="text/css">
+        body{
+            font-family:arial;
+            font-size:14px;
+        }
+        #container{
+            width:600px;
+            margin:0 auto;
+            background-color:lightcyan;
+        }
+
+        form{
+            margin:10px 0;
+        }
+
+        form > div
+        {
+            margin:5px 0 5px 10px;
+        }
+
+        .info
+        {
+            background-color:tan;
+            width:300px;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form id="someForm">
+            <div class="info">
+                Example form that uses confirmDirty plugin. If any input values change from their default, the form is considered dirty.
+                If form is still dirty, user will get a prompt when leaving the page.
+            </div>
+            <div>
+                <label for="firstName">First:</label>
+                <input type="text" id="firstName" name="firstName" size="10" value="" />
+            </div>
+            <div>
+                <label for="lastName">Last:</label>
+                <input type="text" id="lastName" name="lastName" size="10" value="" />
+            </div>
+            <div>
+                <label for="male">Gender:</label>
+                <input id="male"    type="radio" name="gender" value="male" checked="checked" />Male
+                <input id="female"  type="radio" name="gender" value="female" />Female
+                <input id="decline" type="radio" name="gender" value="dta" />Decline to Answer
+            </div>
+            <div>
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <div>
+                <label for="refFriend">How did you hear about us?</label>
+                <input id="refFriend" type="checkbox" name="refFriend" value="friend" checked="checked" />Friend
+                <input id="refFam" type="checkbox" name="refFriend" value="family" />Family
+                <input id="refCollegue" type="checkbox" name="refFriend" value="coworker" />Co-Worker
+            </div>
+
+            <div>
+                <label>Tell us about yourself:</label>
+                <div>
+                    <textarea cols="35" rows="5"></textarea>
+                </div>
+            </div>
+        </form>
+        <a id="clickTest" href="http://www.google.com">Click to leave this page</a>
+    </div>
+    <script type="text/javascript">
+        $('#someForm').confirmDirtyForm();
+    </script>
+</body>
+</html>
